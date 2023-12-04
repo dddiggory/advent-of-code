@@ -1,5 +1,9 @@
 const fs = require('fs');
 const filePath = './inputs/4.txt';
+let linesWithMatches = 0
+let linesWithoutMatches = 0
+
+let lineNumsWithoutMatches = []
 
 fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
@@ -44,12 +48,15 @@ const mainFunction = (input) => {
     }
 
     if (matches>0) {
+      linesWithMatches += 1
       console.log('math', (2**(matches-1)))
       pointsFromLine = 2**(matches-1)
-    }
+    } else {linesWithoutMatches += 1; lineNumsWithoutMatches.push(i)}
     runningTotal += pointsFromLine
 
   }
   
+  console.log({linesWithMatches}, {linesWithoutMatches})
+  console.log({lineNumsWithoutMatches})
   return runningTotal
 }
