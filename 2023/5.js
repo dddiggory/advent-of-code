@@ -15,10 +15,9 @@ const mainFunction = (input) => {
     let seeds = []
 
     for (let m in maps) { // for each map
-        let desc = maps[m].split(':')[0]
+        let desc = maps[m].split(':')[0] //just for logging
         let mapStrings = maps[m].split(':')[1].split('\n').filter((value) => value)
         let mapRules = []
-        let newSeeds = []
 
         if (m==0) { //seeds
             seeds = mapStrings[0].split(' ').filter((value) => value)
@@ -49,21 +48,7 @@ const mainFunction = (input) => {
 
         }
         
-        // console.log({mapRules})
-        // console.log({desc}, {seeds})
-
-        // if (m>=1) {process.exit()}
-        
-        //establish ranges & transform logic
-        // console.log({desc}, mapRules)
-
-        //for each seed
-        //with each map, transform it into the next number
-        //no need to store the originals
-        //array
-        
     }
-    // console.log(maps[0])
 
     return Math.min(...seeds)
 }
