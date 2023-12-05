@@ -44,7 +44,7 @@ const mainFunction = (input) => {
     let line = lines[i]
     let lineNumber = line.split(':')[0].split(' ');
     lineNumber = lineNumber[lineNumber.length-1]
-    // console.log({lineNumber})
+    // console.log({lineNumber})git 
     // if (lineNumber =='') {
     //   console.log(line.split(':')[0].split(' '))
     //   console.log({line}, {lineNumber})
