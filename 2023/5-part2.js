@@ -6,6 +6,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
       console.error(err);
       return;
     }
+    
     console.log(mainFunction(data));
   });
 
@@ -19,7 +20,20 @@ const mainFunction = (input) => {
         let mapRules = []
 
         if (m==0) { //seeds
-            seeds = mapStrings[0].split(' ').filter((value) => value)
+            //seeds are ranges now
+            let seedData = mapStrings[0].split(' ').filter((value) => value)
+
+            for (let p in seedData) {
+                if (!(Number(p)%2)) {
+                    console.log({p})
+                    let seedRangeStart = Number(seedData[p])
+                    let seedRangeEnd = seedRangeStart + Number(seedData[Number(p)+1])
+                    
+                    let seedRangeArray = Array.from({ length: seedRangeEnd - seedRangeStart + 1 }, (_, index) => seedRangeStart + index);
+
+                    seeds.push(...seedRangeArray)
+                }
+            }
             continue
         }
 
@@ -44,7 +58,10 @@ const mainFunction = (input) => {
                     indexesAlreadyMapped.push(s)
                 }
             }
+
         }
+        
     }
+
     return Math.min(...seeds)
 }
