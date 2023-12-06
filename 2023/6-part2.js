@@ -10,12 +10,6 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     console.log(mainFunction(data));
   });
 
-//   Time:      71530
-//   Distance:  940200
-// Now, you have to figure out how many ways there are to win this single race. In this example, the race lasts for 71530 milliseconds and the record distance you need to beat is 940200 millimeters. You could hold the button anywhere from 14 to 71516 milliseconds and beat the record, a total of 71503 ways!
-
-
-
 const mainFunction = (input) => {
     
     let data = input.split('\n')
@@ -39,12 +33,7 @@ const mainFunction = (input) => {
         
         if (!(Number(i)%1000)) {
             console.log({chargeTime}, {distanceAchieved}, {waysToWin})
-        }
-        
+        }   
     }
-
-
-
-
     return waysToWin
 }
