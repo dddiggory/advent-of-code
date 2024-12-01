@@ -10,7 +10,6 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     console.log(mainFunction(data));
   });
 
-
 const mainFunction = (input) => {
     
     let data = input.split('\n')
@@ -43,7 +42,6 @@ const mainFunction = (input) => {
         combinedWaysToWin *= raceWaysToWin
 
     }
-
 
     return combinedWaysToWin
 }
